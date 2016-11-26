@@ -6,12 +6,13 @@ import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.Valor;
 import br.unb.poo.mh.ValorInteiro;
 
-public class Divisao extends ExpressaoBinaria{
-	
-	public Divisao(Expressao expEsquerda, Expressao expDireita){
+
+public class ExpressaoDivisao extends ExpressaoBinaria {
+
+	public ExpressaoDivisao(Expressao expDireita, Expressao expEsquerda) {
 		super(expDireita, expEsquerda);
 	}
-	
+
 	@Override
 	public Valor avaliar() {
 		ValorInteiro v1 = (ValorInteiro)expEsquerda.avaliar();
@@ -21,9 +22,21 @@ public class Divisao extends ExpressaoBinaria{
 	}
 
 	@Override
+
 	public Tipo tipo() {
-		return (expEsquerda.tipo() == Tipo.Inteiro && expDireita.tipo() == Tipo.Inteiro) ? Tipo.Inteiro :
-			 Tipo.Error;
-	}
+		Tipo tipoExpDir = expDireita.tipo();
+		Tipo tipoExpEsq = expEsquerda.tipo();
 	
+		if(tipoExpDir.equals(Tipo.Inteiro) && tipoExpEsq.equals(Tipo.Inteiro)){
+			return Tipo.Inteiro;	
+	}
+		return Tipo.Error;
+		
+		// TODO Auto-generated method stub
+	}
+	public boolean checarTipo() {
+		// TODO Auto-generated method stub
+		return tipo().equals(Tipo.Inteiro);
+		
+	}
 }

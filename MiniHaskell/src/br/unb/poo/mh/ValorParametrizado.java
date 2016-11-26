@@ -15,8 +15,14 @@ public abstract class ValorParametrizado<T> extends Valor {
 	@Override
 	public boolean equals(Object other) {
 		if(other instanceof ValorParametrizado) {
-			return valor.equals(((ValorParametrizado)other).getValor());
+			
+			return valor.equals(((ValorParametrizado<?>)other).getValor());
 		}
 		return false;
 	}
+	@Override
+	public boolean checarTipo(){
+		return true;
+	}
+	
 }

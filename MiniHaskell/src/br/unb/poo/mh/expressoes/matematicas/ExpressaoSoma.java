@@ -25,4 +25,10 @@ public class ExpressaoSoma extends ExpressaoBinaria {
 		return (expEsquerda.tipo() == Tipo.Inteiro && expDireita.tipo() == Tipo.Inteiro) ? Tipo.Inteiro : Tipo.Error;
 	}
 
+	public boolean checarTipo() {
+		// TODO Auto-generated method stub
+		return tipo().equals(Tipo.Inteiro);
+		
+	}
+	
 }

@@ -7,9 +7,9 @@ import br.unb.poo.mh.Valor;
 import br.unb.poo.mh.ValorInteiro;
 
 
-public class ExpressaoMultiplicacao extends ExpressaoBinaria {
+public class ExpressaoSubtracao extends ExpressaoBinaria {
 
-	public ExpressaoMultiplicacao(Expressao expDireita, Expressao expEsquerda) {
+	public ExpressaoSubtracao(Expressao expDireita, Expressao expEsquerda) {
 		super(expDireita, expEsquerda);
 	}
 
@@ -18,18 +18,26 @@ public class ExpressaoMultiplicacao extends ExpressaoBinaria {
 		ValorInteiro v1 = (ValorInteiro)expEsquerda.avaliar();
 		ValorInteiro v2 = (ValorInteiro)expDireita.avaliar();
 		
-		return new ValorInteiro(v1.getValor() * v2.getValor());
+		return new ValorInteiro(v1.getValor() - v2.getValor());
 	}
 
 	@Override
-	public Tipo tipo() {
-		return (expEsquerda.tipo() == Tipo.Inteiro && expDireita.tipo() == Tipo.Inteiro) ? Tipo.Inteiro :
-		 Tipo.Error;
-	}
 
+	public Tipo tipo() {
+		Tipo tipoExpDir = expDireita.tipo();
+		Tipo tipoExpEsq = expEsquerda.tipo();
+	
+		if(tipoExpDir.equals(Tipo.Inteiro) && tipoExpEsq.equals(Tipo.Inteiro)){
+			return Tipo.Inteiro;	
+	}
+		return Tipo.Error;
+		
+		// TODO Auto-generated method stub
+	}
+	
 	public boolean checarTipo() {
 		// TODO Auto-generated method stub
 		return tipo().equals(Tipo.Inteiro);
 		
 	}
-}
+}	

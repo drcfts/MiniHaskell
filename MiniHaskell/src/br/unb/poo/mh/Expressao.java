@@ -20,4 +20,5 @@ package br.unb.poo.mh;
 public interface Expressao {
 	public Valor avaliar();
 	public Tipo tipo();
+	boolean checarTipo();
 }

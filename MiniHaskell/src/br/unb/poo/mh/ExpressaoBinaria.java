@@ -8,5 +8,22 @@ public abstract class ExpressaoBinaria implements Expressao {
 		this.expDireita = expDireita;
 		this.expEsquerda = expEsquerda;
 	}
+
+	public Expressao getExpDireita() {
+		return expDireita;
+	}
+
+	public void setExpDireita(Expressao expDireita) {
+		this.expDireita = expDireita;
+	}
+
+	public Expressao getExpEsquerda() {
+		return expEsquerda;
+	}
+
+	public void setExpEsquerda(Expressao expEsquerda) {
+		this.expEsquerda = expEsquerda;
+	}
+	
 	
 }

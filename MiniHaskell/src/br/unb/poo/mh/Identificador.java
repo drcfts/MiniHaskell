@@ -25,4 +25,10 @@ public class Identificador implements Expressao {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	@Override
+	public boolean checarTipo() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

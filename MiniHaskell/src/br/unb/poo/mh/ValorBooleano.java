@@ -11,4 +11,5 @@ public class ValorBooleano extends ValorParametrizado<Boolean>{
 		return Tipo.Booleano;
 	}
 
+
 }

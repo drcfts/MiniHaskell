@@ -47,6 +47,14 @@ public class ExpressaoLet implements Expressao{
 		public Expressao getExpressao() {
 			return expressao;
 		}
-		
-		
+
+		/*
+		 * Se nao for do tipo "Error" entao está certo
+		 * 
+		 */
+		@Override
+		public boolean checarTipo() {
+			// TODO Auto-generated method stub
+			return (!tipo().equals(Tipo.Error));
+		}		
 }
