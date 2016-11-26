@@ -3,6 +3,8 @@ package br.unb.poo.mh;
 import java.util.HashMap;
 import java.util.Stack;
 
+import br.unb.poo.mh.funcao.DeclaracaoFuncao;
+
 /*
  * Classe utilitaria para permitir overloading. 
  * Com o uso dessa classe, podemos ter funcoes 
@@ -68,6 +70,7 @@ class AssinaturaDeFuncao {
  * @author rbonifacio
  *
  */
+
 public class Ambiente {
 	private HashMap<AssinaturaDeFuncao, DeclaracaoFuncao> funcoes;
 	
@@ -112,6 +115,7 @@ public class Ambiente {
 		}
 		return dec;
 	}
+	
 	
 	/**
 	 * Adiciona uma nova tabela (vazia) entre ids e 

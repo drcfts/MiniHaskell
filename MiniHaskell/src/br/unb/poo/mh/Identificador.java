@@ -11,4 +11,18 @@ public class Identificador implements Expressao {
 		Expressao exp = Ambiente.instance().getExpressao(id);
 		return exp.avaliar();
 	}
+
+	@Override
+	public Tipo tipo() {
+		Expressao exp = Ambiente.instance().getExpressao(id);
+		return exp.tipo();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 }

@@ -18,4 +18,11 @@ public class IfThenElse implements Expressao {
 		}
 		return 			clausulaElse.avaliar();
 	}
+
+	@Override
+	public Tipo tipo() {
+		return this.avaliar().tipo();
+	}
+	
+	
 }
