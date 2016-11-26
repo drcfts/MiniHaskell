@@ -1,4 +1,4 @@
-# Game Of Life
+# MiniHaskell
 ###Projeto 2
 ##Técnicas de Programação 1 ministrada pelo professor Rodrigo Bonifácio
 ###2/2016
@@ -10,28 +10,29 @@ Henrique Brant de Moraes Palmeirão Alvarenga - 15/0011644
 
 Marcos Vinícius Prescendo Tonin - 14/0153233
 
-###Objetivos concluidos
+##TODO
 
-a) Novos tipos de expressão:
+a) Novos tipos de expressão:(OK)
 
-* subtração;
+* subtração;(OK)
 
-* divisão; 
+* divisão; (OK)
 
-* and;
+* and;(OK)
 
-* or;
+* or;(OK)
 
-* not e;
+* not e;(OK) 
 
-* operadores relacionais: ==, >, <, >=, <=.
+* operadores relacionais: ==, >, <, >=, <=.(OK)
 
-b) Verificação de tipos 
+b) Verificação de tipos  (Ok)
 
 - lembrar que as funções devem ter os argumentos formais tirados
 
 c) Testes unitarios: 90% de cobertura
-
+#### Nota
+Verificar Indentificador e 	AplicacaoFuncao
 
 ####### Forma de envio:
 Enviar arquivo ZIP contendo o codigo fonte + testes unitários + arquivo README indicando a equipe. 
