@@ -14,7 +14,6 @@ public class ExpressaoMaior extends ExpressaoBinaria {
 
 	public ExpressaoMaior(Expressao expDireita, Expressao expEsquerda) {
 		super(expDireita, expEsquerda);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -28,7 +27,6 @@ public class ExpressaoMaior extends ExpressaoBinaria {
 	}
 		return Tipo.Error;
 		
-		// TODO Auto-generated method stub
 	}
 	
 	
@@ -45,7 +43,6 @@ public class ExpressaoMaior extends ExpressaoBinaria {
 
 @Override
 public boolean checarTipo() {
-	// TODO Auto-generated method stub
 	return tipo().equals(Tipo.Inteiro);
 	
 }

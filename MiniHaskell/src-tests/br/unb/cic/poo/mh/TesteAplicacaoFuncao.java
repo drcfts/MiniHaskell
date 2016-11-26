@@ -8,10 +8,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.unb.poo.mh.Ambiente;
-import br.unb.poo.mh.AplicacaoFuncao;
-import br.unb.poo.mh.DeclaracaoFuncao;
+import br.unb.poo.mh.funcao.AplicacaoFuncao;
+import br.unb.poo.mh.funcao.DeclaracaoFuncao;
 import br.unb.poo.mh.Expressao;
-import br.unb.poo.mh.ExpressaoSoma;
+import br.unb.poo.mh.expressoes.matematicas.ExpressaoSoma;
 import br.unb.poo.mh.Identificador;
 import br.unb.poo.mh.ValorInteiro;
 

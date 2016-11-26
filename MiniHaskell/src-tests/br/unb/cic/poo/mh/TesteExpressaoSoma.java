@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
-import br.unb.poo.mh.ExpressaoSoma;
+import br.unb.poo.mh.expressoes.matematicas.ExpressaoSoma;
 import br.unb.poo.mh.ValorInteiro;
 
 

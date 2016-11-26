@@ -32,7 +32,6 @@ public class ExpressaoDivisao extends ExpressaoBinaria {
 	}
 		return Tipo.Error;
 		
-		// TODO Auto-generated method stub
 	}
 	public boolean checarTipo() {
 		// TODO Auto-generated method stub

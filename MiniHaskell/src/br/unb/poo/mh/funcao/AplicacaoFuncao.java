@@ -44,7 +44,13 @@ public class AplicacaoFuncao implements Expressao {
 
 	@Override
 	public Tipo tipo() {
+		//TODO -> PROVISORIO
 		return this.avaliar().tipo();
+	}
+
+	@Override
+	public boolean checarTipo() {
+		return tipo().equals(Tipo.Funcao);
 	}
 	
 	
