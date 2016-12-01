@@ -21,14 +21,12 @@ public class ExpressaoDiferente extends ExpressaoBinaria {
 		Tipo tipoExpDir = expDireita.tipo();
 		Tipo tipoExpEsq = expEsquerda.tipo();
 	
-		if(tipoExpDir.equals(Tipo.Booleano) && tipoExpEsq.equals(Tipo.Booleano)){
+		if((tipoExpDir.equals(Tipo.Booleano) && tipoExpEsq.equals(Tipo.Booleano)) || (tipoExpDir.equals(Tipo.Inteiro) && tipoExpEsq.equals(Tipo.Inteiro))){
 				return Tipo.Booleano;	
 		}
-		else if(tipoExpDir.equals(Tipo.Inteiro) && tipoExpEsq.equals(Tipo.Inteiro)){
-			return Tipo.Inteiro;	
-	}
-		return Tipo.Error;
-		
+		else{
+			return Tipo.Error;
+		}
 		// TODO Auto-generated method stub
 	}
 	
@@ -37,30 +35,27 @@ public class ExpressaoDiferente extends ExpressaoBinaria {
 
 	public Valor avaliar(){
 		
-	if(tipo().equals(Tipo.Inteiro)){	
-	 	ValorInteiro expD_int = (ValorInteiro)expDireita.avaliar();
-	 	ValorInteiro expE_int = (ValorInteiro)expEsquerda.avaliar();
-	 	
-	return new ValorBooleano(expD_int.getValor() != expE_int.getValor());
-	} 
-	
 	if(tipo().equals(Tipo.Booleano)){	
-	 	ValorBooleano expD = (ValorBooleano)expDireita.avaliar();
-	 	ValorBooleano expE = (ValorBooleano)expEsquerda.avaliar();
-	 	
-	return new ValorBooleano(expD.getValor() != expE.getValor());
+	 	if(expEsquerda.tipo().equals(Tipo.Inteiro)){
+	 		ValorInteiro expD = (ValorInteiro)expDireita.avaliar();
+	 		ValorInteiro expE = (ValorInteiro)expEsquerda.avaliar();
+	 		return new ValorBooleano(expD.getValor() != expE.getValor());
+	 	}
+	 	else{
+	 		ValorBooleano expD_int = (ValorBooleano)expDireita.avaliar();
+	 		ValorBooleano expE_int = (ValorBooleano)expEsquerda.avaliar();
+		 	
+	 		return new ValorBooleano(expD_int.getValor() != expE_int.getValor());
+	 	}
 	}
-	/*
-	 * Caso que o tipo não é inteiro nem bool ? O que fazer ? NULL? SERÁ?!?!??
-	 */
-	return null; 
+	
+	return new ValorBooleano(false); 
 	
  }
 
 @Override
 public boolean checarTipo() {
-	// TODO Auto-generated method stub
-	return (tipo().equals(Tipo.Booleano) || tipo().equals(Tipo.Inteiro));
+	return (tipo().equals(Tipo.Booleano));
 	
 }
 

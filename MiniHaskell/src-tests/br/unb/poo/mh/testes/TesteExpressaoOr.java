@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorBooleano;
+import br.unb.poo.mh.ValorInteiro;
+import br.unb.poo.mh.expressoes.logicas.ExpressaoAnd;
 import br.unb.poo.mh.expressoes.logicas.ExpressaoOr;
 
 public class TesteExpressaoOr {
@@ -19,10 +22,14 @@ public class TesteExpressaoOr {
 		Expressao or3 = new ExpressaoOr(v,v);
 		Expressao or4 = new ExpressaoOr(f,f);
 			
-		Assert.assertEquals(true, or1.avaliar());
-		Assert.assertEquals(true, or2.avaliar());
-		Assert.assertEquals(true, or3.avaliar());
-		Assert.assertEquals(false, or4.avaliar());
+		Assert.assertEquals(v, or1.avaliar());
+		Assert.assertEquals(v, or2.avaliar());
+		Assert.assertEquals(v, or3.avaliar());
+		Assert.assertEquals(f, or4.avaliar());
+		
+		Assert.assertEquals(true, or4.checarTipo());
+		or3 = new ExpressaoAnd(new ValorInteiro(5), f);
+		Assert.assertEquals(Tipo.Error, or3.tipo());
 	}
 		
 	@Test
@@ -32,8 +39,8 @@ public class TesteExpressaoOr {
 		Expressao or3 = new ExpressaoOr(f,v);
 		Expressao or4 = new ExpressaoOr(or3,f);
 			
-		Assert.assertEquals(false, or2.avaliar());
-		Assert.assertEquals(true, or4.avaliar());
+		Assert.assertEquals(f, or2.avaliar());
+		Assert.assertEquals(v, or4.avaliar());
 	}
 	
 }

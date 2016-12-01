@@ -9,8 +9,8 @@ import br.unb.poo.mh.ValorInteiro;
 
 public class ExpressaoDivisao extends ExpressaoBinaria {
 
-	public ExpressaoDivisao(Expressao expDireita, Expressao expEsquerda) {
-		super(expDireita, expEsquerda);
+	public ExpressaoDivisao(Expressao expEsquerda, Expressao expDireita) {
+		super(expEsquerda, expDireita);
 	}
 
 	@Override
@@ -34,7 +34,6 @@ public class ExpressaoDivisao extends ExpressaoBinaria {
 		
 	}
 	public boolean checarTipo() {
-		// TODO Auto-generated method stub
 		return tipo().equals(Tipo.Inteiro);
 		
 	}

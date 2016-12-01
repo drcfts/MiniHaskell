@@ -12,6 +12,9 @@ import br.unb.poo.mh.expressoes.relacionais.ExpressaoDiferente;
 
 public class TesteExpressaoDiferente {
 	
+	ValorBooleano v = new ValorBooleano(true);
+	ValorBooleano f = new ValorBooleano(false);
+	
 	@Test
 	public void testeDiferenteInteiro(){
 		ValorInteiro v5 = new ValorInteiro(5);
@@ -20,19 +23,25 @@ public class TesteExpressaoDiferente {
 		Expressao dif1 = new ExpressaoDiferente(v5, v10);
 		Expressao dif2 = new ExpressaoDiferente(v5, v5);
 		
-		Assert.assertEquals(true, dif1.avaliar());
-		Assert.assertEquals(false, dif2.avaliar());
+		Assert.assertEquals(v, dif1.avaliar());
+		Assert.assertEquals(f, dif2.avaliar());
 	}
 	
 	@Test
 	public void testeDiferenteBooleano(){
-		ValorBooleano v = new ValorBooleano(true);
-		ValorBooleano f = new ValorBooleano(false);
 		
 		Expressao dif1 = new ExpressaoDiferente(v,f);
 		Expressao dif2 = new ExpressaoDiferente(f,f);
 		
-		Assert.assertEquals(true, dif1.avaliar());
-		Assert.assertEquals(false, dif2.avaliar());
+		Assert.assertEquals(v, dif1.avaliar());
+		Assert.assertEquals(f, dif2.avaliar());
+	}
+	
+	@Test
+	public void testeNok(){
+		ValorInteiro v5 = new ValorInteiro(5);
+		Expressao dif = new ExpressaoDiferente(v, v5);
+		
+		Assert.assertEquals(false, dif.checarTipo());
 	}
 }

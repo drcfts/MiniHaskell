@@ -23,29 +23,28 @@ public class IfThenElse implements Expressao {
 	 * 
 	 * e que as clausulas devem ser do mesmo tipo
 	 * se forem -> retorna o proprio tipo 
-	 *  caso nao satisfaça nada
+	 *  caso nao satisfaï¿½a nada
 	 *  return error
 	 */
 	
 	
 	@Override
 	public Tipo tipo() {
-		// TODO Auto-generated method stub
 		Tipo tipoCondi_If_else = condicao.tipo();
 			if(tipoCondi_If_else.equals(Tipo.Booleano))
 			{
-				if(clausulaThen.tipo().equals(clausulaElse))
+				if(clausulaThen.tipo().equals(clausulaElse.tipo()))
 				{
 					return clausulaElse.tipo();
 				}
 			}
 		
-		
+
 		return Tipo.Error;
 	}
 
 	/*
-	 * Se nao for do tipo "Error" entao está certo
+	 * Se nao for do tipo "Error" entao estï¿½ certo
 	 * 
 	 */
 	@Override

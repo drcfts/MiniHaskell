@@ -28,11 +28,11 @@ a) Novos tipos de expressão:(OK)
 
 b) Verificação de tipos  (Ok)
 
-- lembrar que as funções devem ter os argumentos formais tirados
+- lembrar que as funções devem ter os argumentos formais tipados (ok)
 
-c) Testes unitarios: 90% de cobertura
+c) Testes unitarios: 90% de cobertura (ok)
 #### Nota
-Verificar Indentificador e 	AplicacaoFuncao
+Verificar Indentificador e 	AplicacaoFuncao (ok)
 
 ####### Forma de envio:
 Enviar arquivo ZIP contendo o codigo fonte + testes unitários + arquivo README indicando a equipe. 

@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
+import br.unb.poo.mh.ValorBooleano;
 import br.unb.poo.mh.ValorInteiro;
 import br.unb.poo.mh.expressoes.matematicas.ExpressaoDivisao;
 
@@ -29,6 +30,15 @@ public class TesteExpressaoDivisao {
 		
 		Assert.assertEquals(new ValorInteiro(4), complexo.avaliar());
 		
+	}
+	
+	@Test
+	public void TesteExpressaoNok(){
+		Expressao bool = new ValorBooleano(true);
+		Expressao inteiro = new ValorInteiro(1);
+		Expressao divisao = new ExpressaoDivisao(bool, inteiro);
+		
+		Assert.assertEquals(false, divisao.checarTipo());
 	}
 	
 	

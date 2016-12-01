@@ -26,6 +26,9 @@ public class TesteExpressaoLet {
 	@Test
 	public void testeLetSoma() {		
 		// let x = 25 in x + 5
+		Assert.assertEquals(let.getId(), "x");
+		Assert.assertEquals(let.getAtrib(), new ValorInteiro(25));
+		Assert.assertEquals(let.getExpressao(), soma1);
 		Assert.assertEquals(new ValorInteiro(30), let.avaliar()); 
 		// let x = 10 in x + x
 		Assert.assertEquals(new ValorInteiro(20), let2.avaliar());
@@ -45,6 +48,7 @@ public class TesteExpressaoLet {
 		ExpressaoLet letFinal =  new ExpressaoLet("x", v5, soma2);
 		ExpressaoLet let4 = new ExpressaoLet("x", v10 , letFinal);
 		Assert.assertEquals(new ValorInteiro(10), let4.avaliar());
+		Assert.assertEquals(true, let4.checarTipo());
 	}
 	
 

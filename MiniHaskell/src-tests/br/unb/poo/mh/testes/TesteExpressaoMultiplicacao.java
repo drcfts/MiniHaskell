@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorBooleano;
 import br.unb.poo.mh.ValorInteiro;
 import br.unb.poo.mh.expressoes.matematicas.ExpressaoSoma;
@@ -27,6 +28,6 @@ public class TesteExpressaoMultiplicacao {
 		
 		Expressao m = new ExpressaoMultiplicacao(v10, new ExpressaoSoma(v10, vtrue));
 		
-		m.avaliar();
+		Assert.assertEquals(Tipo.Error, m.tipo());
 	}
 }

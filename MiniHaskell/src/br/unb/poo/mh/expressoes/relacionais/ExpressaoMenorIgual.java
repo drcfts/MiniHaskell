@@ -9,8 +9,8 @@ import br.unb.poo.mh.ValorInteiro;
 
 public class ExpressaoMenorIgual extends ExpressaoBinaria {
 
-	public ExpressaoMenorIgual(Expressao expDireita, Expressao expEsquerda) {
-		super(expDireita, expEsquerda);
+	public ExpressaoMenorIgual(Expressao expEsquerda, Expressao expDireita) {
+		super(expEsquerda, expDireita);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,7 +21,7 @@ public class ExpressaoMenorIgual extends ExpressaoBinaria {
 		Tipo tipoExpEsq = expEsquerda.tipo();
 	
 		if(tipoExpDir.equals(Tipo.Inteiro) && tipoExpEsq.equals(Tipo.Inteiro)){
-			return Tipo.Inteiro;	
+			return Tipo.Booleano;	
 	}
 		return Tipo.Error;
 		
@@ -36,14 +36,12 @@ public class ExpressaoMenorIgual extends ExpressaoBinaria {
 	 	ValorInteiro expD_int = (ValorInteiro)expDireita.avaliar();
 	 	ValorInteiro expE_int = (ValorInteiro)expEsquerda.avaliar();
 	 	
-	return new ValorBooleano(expD_int.getValor() <= expE_int.getValor());
+	return new ValorBooleano(expE_int.getValor() <= expD_int.getValor());
 	
  }
 
 public boolean checarTipo() {
-	// TODO Auto-generated method stub
-	return tipo().equals(Tipo.Inteiro);
-	
+	return tipo().equals(Tipo.Booleano);
 }
 
 }
