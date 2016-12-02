@@ -1,22 +1,22 @@
 # MiniHaskell
 ###Projeto 2
-##TÈcnicas de ProgramaÁ„o 1 ministrada pelo professor Rodrigo Bonif·cio
+##T√©cnicas de Programa√ß√£o 1 ministrada pelo professor Rodrigo Bonif√°cio
 ###2/2016
 #####Alunos 
 
 Davi Rabbouni de Carvalho Freitas - 15/0033010
 
-Henrique Brant de Moraes Palmeir„o Alvarenga - 15/0011644
+Henrique Brant de Moraes Palmeir√£o Alvarenga - 15/0011644
 
-Marcos VinÌcius Prescendo Tonin - 14/0153233
+Marcos Vin√≠cius Prescendo Tonin - 14/0153233
 
-##TODO
+- [X] Primeira parte  
 
-a) Novos tipos de express„o:(OK)
+a) Novos tipos de express√£o:(OK)
 
-* subtraÁ„o;(OK)
+* subtra√ß√£o;(OK)
 
-* divis„o; (OK)
+* divis√£o; (OK)
 
 * and;(OK)
 
@@ -26,13 +26,43 @@ a) Novos tipos de express„o:(OK)
 
 * operadores relacionais: ==, >, <, >=, <=.(OK)
 
-b) VerificaÁ„o de tipos  (Ok)
+b) Verifica√ß√£o de tipos  (Ok)
 
-- lembrar que as funÁıes devem ter os argumentos formais tipados (ok)
+- lembrar que as fun√ß√µes devem ter os argumentos formais tipados (ok)
 
 c) Testes unitarios: 90% de cobertura (ok)
 #### Nota
 Verificar Indentificador e 	AplicacaoFuncao (ok)
 
-####### Forma de envio:
-Enviar arquivo ZIP contendo o codigo fonte + testes unit·rios + arquivo README indicando a equipe. 
+###### Forma de envio:
+Enviar arquivo ZIP contendo o codigo fonte + testes unit√°rios + arquivo README indicando a equipe. 
+#### FIM da primeira parte ______________________________________________________________________
+### Segunda parte 
+- [ ] Segunda parte 
+
+## TODO
+a) Implementa√ß√£o do interpretador (3pts): 
+
+* Programa que interpreta programas em MiniHaskell
+
+#### exemplo
+
+> loadFile("codigo.mhs") 
+
+Esse comando carrega em memoria todas as declara√ß√µes de funcoes descritas no arquivo codigo.mhs. Apos isso, deve ser possivel avaliar as express√µes pelo prompt. 
+
+> eval("1+1")
+
+2
+
+> eval("soma(2, 3)")
+
+5
+
+b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solu√ß√£o no diagrama DesenhoLista. 
+
+c) Implementar novas transformaciones de programas usando visitors. 
+
+d) 90% de teste de cobertura
+
+Voce, tem o direito de me convencer qua a sua implementa√ß√£o merece um SS na disciplina. 
