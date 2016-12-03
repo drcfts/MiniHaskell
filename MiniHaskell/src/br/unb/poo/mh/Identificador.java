@@ -31,4 +31,10 @@ public class Identificador implements Expressao {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}		
+
 }

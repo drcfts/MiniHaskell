@@ -5,6 +5,7 @@ import br.unb.poo.mh.ExpressaoUnaria;
 import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.Valor;
 import br.unb.poo.mh.ValorBooleano;
+import br.unb.poo.mh.Visitor;
 
 public class ExpressaoNot extends  ExpressaoUnaria {
 
@@ -40,6 +41,10 @@ public class ExpressaoNot extends  ExpressaoUnaria {
 		return tipo().equals(Tipo.Booleano);
 	}
 	
-	
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}			
 	
 }

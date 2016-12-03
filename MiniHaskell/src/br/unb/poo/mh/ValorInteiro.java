@@ -10,4 +10,10 @@ public class ValorInteiro extends ValorParametrizado<Integer> {
 	public Tipo tipo() {
 		return Tipo.Inteiro;
 	}
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}		
+
 }

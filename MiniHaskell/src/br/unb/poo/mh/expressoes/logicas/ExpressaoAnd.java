@@ -5,6 +5,7 @@ import br.unb.poo.mh.ExpressaoBinaria;
 import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.Valor;
 import br.unb.poo.mh.ValorBooleano;
+import br.unb.poo.mh.Visitor;
 
 
 
@@ -45,5 +46,9 @@ public class ExpressaoAnd extends ExpressaoBinaria {
 		// TODO Auto-generated method stub
 		return tipo().equals(Tipo.Booleano);
 	}
-	
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}		
 }

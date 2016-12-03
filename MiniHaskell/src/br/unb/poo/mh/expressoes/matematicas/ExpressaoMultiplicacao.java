@@ -5,6 +5,7 @@ import br.unb.poo.mh.ExpressaoBinaria;
 import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.Valor;
 import br.unb.poo.mh.ValorInteiro;
+import br.unb.poo.mh.Visitor;
 
 
 public class ExpressaoMultiplicacao extends ExpressaoBinaria {
@@ -32,4 +33,9 @@ public class ExpressaoMultiplicacao extends ExpressaoBinaria {
 		return tipo().equals(Tipo.Inteiro);
 		
 	}
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}		
 }

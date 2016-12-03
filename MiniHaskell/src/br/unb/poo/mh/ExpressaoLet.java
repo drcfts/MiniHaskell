@@ -56,5 +56,11 @@ public class ExpressaoLet implements Expressao{
 		public boolean checarTipo() {
 			// TODO Auto-generated method stub
 			return (!tipo().equals(Tipo.Error));
+		}
+
+		@Override
+		public void aceitar(Visitor visitor) {
+			// TODO Auto-generated method stub
+			visitor.visitar(this);
 		}		
 }

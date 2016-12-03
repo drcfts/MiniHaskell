@@ -21,4 +21,5 @@ public interface Expressao {
 	public Valor avaliar();
 	public Tipo tipo();
 	boolean checarTipo();
+	public void aceitar(Visitor visitor);
 }

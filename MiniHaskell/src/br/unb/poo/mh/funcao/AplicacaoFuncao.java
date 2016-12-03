@@ -7,6 +7,7 @@ import br.unb.poo.mh.Ambiente;
 import br.unb.poo.mh.Expressao;
 import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.Valor;
+import br.unb.poo.mh.Visitor;
 
 /**
  * Corresponde a uma expressao do tipo 
@@ -100,7 +101,11 @@ public class AplicacaoFuncao implements Expressao {
 	}
 	
 	
-	
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}		
 	
 	
 

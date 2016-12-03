@@ -6,17 +6,17 @@ public class IfThenElse implements Expressao {
 	private Expressao clausulaElse;
 	
 	public IfThenElse(Expressao condicao, Expressao clausulaThen, Expressao clausulaElse) {
-		this.condicao = condicao;
-		this.clausulaThen = clausulaThen;
-		this.clausulaElse = clausulaElse;
+		this.setCondicao(condicao);
+		this.setClausulaThen(clausulaThen);
+		this.setClausulaElse(clausulaElse);
 	} 
 	
 	public Valor avaliar() {
-		ValorBooleano valor = (ValorBooleano)condicao.avaliar();
+		ValorBooleano valor = (ValorBooleano)getCondicao().avaliar();
 		if(valor.getValor()) {
-			return clausulaThen.avaliar();
+			return getClausulaThen().avaliar();
 		}
-		return 			clausulaElse.avaliar();
+		return 			getClausulaElse().avaliar();
 	}
 
 	/*Se repararmos no avaliar notamos que a condicao deve ser um valor booleano
@@ -30,12 +30,12 @@ public class IfThenElse implements Expressao {
 	
 	@Override
 	public Tipo tipo() {
-		Tipo tipoCondi_If_else = condicao.tipo();
+		Tipo tipoCondi_If_else = getCondicao().tipo();
 			if(tipoCondi_If_else.equals(Tipo.Booleano))
 			{
-				if(clausulaThen.tipo().equals(clausulaElse.tipo()))
+				if(getClausulaThen().tipo().equals(getClausulaElse().tipo()))
 				{
-					return clausulaElse.tipo();
+					return getClausulaElse().tipo();
 				}
 			}
 		
@@ -51,5 +51,35 @@ public class IfThenElse implements Expressao {
 	public boolean checarTipo() {
 		// TODO Auto-generated method stub
 		return (!tipo().equals(Tipo.Error));
+	}
+
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}
+
+	public Expressao getCondicao() {
+		return condicao;
+	}
+
+	public void setCondicao(Expressao condicao) {
+		this.condicao = condicao;
+	}
+
+	public Expressao getClausulaThen() {
+		return clausulaThen;
+	}
+
+	public void setClausulaThen(Expressao clausulaThen) {
+		this.clausulaThen = clausulaThen;
+	}
+
+	public Expressao getClausulaElse() {
+		return clausulaElse;
+	}
+
+	public void setClausulaElse(Expressao clausulaElse) {
+		this.clausulaElse = clausulaElse;
 	}
 }
