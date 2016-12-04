@@ -10,7 +10,7 @@ public class ValorBooleano extends ValorParametrizado<Boolean>{
 	public Tipo tipo() {
 		return Tipo.Booleano;
 	}
-
+	
 	@Override
 	public void aceitar(Visitor visitor) {
 		// TODO Auto-generated method stub

@@ -27,3 +27,4 @@ public enum Tipo {
 	Inteiro, Booleano, Error, Funcao,ListaVazia,ListaNaoVazia;
 	
 }
+	

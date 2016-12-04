@@ -66,3 +66,4 @@ c) Implementar novas transformaciones de programas usando visitors. (OK, visitor
 d) 90% de teste de cobertura
 
 Voce, tem o direito de me convencer qua a sua implementação merece um SS na disciplina. 
+t

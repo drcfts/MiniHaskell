@@ -296,4 +296,16 @@ public class Refactoring implements Visitor{
 	
 	}
 
+	@Override
+	public void visitar(ListaVazia<?> exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ListaNaoVazia<?> exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

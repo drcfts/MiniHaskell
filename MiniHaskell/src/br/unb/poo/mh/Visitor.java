@@ -44,4 +44,6 @@ public interface Visitor {
 	public void visitar(AplicacaoFuncao exp);
 	public void visitar(Identificador exp);
 	public void visitar(ExpressaoLet exp);
+	public void visitar(ListaVazia<?> exp);
+	public void visitar(ListaNaoVazia<?> exp);
 }

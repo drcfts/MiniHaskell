@@ -2,22 +2,20 @@ package br.unb.poo.mh;
 
 public class ListaNaoVazia<T extends Valor> extends ValorLista<T> {
 
-	
-
-	public ListaNaoVazia(T head) {
-		super(head);
-		ListaVazia<T> tail = new ListaVazia<T>();
-		tail.setAnterior(this);
-		this.setTail(tail);
+	public ListaNaoVazia(T inicio) {
+		super(inicio);
+		ListaVazia<T> Resto = new ListaVazia<T>(); 
+		Resto.setAnterior(this);
+		this.setResto(Resto);
 		this.setAnterior(null);
-		
-		// TODO Auto-generated constructor stub
 	}
+	
 
 	@Override
 	public Valor avaliar() {
-		// TODO Auto-generated method stub
-		return  this;
+		ListaNaoVazia<T> vA = this;
+		Valor Resultado = vA.avaliar();
+		return Resultado;
 	}
 
 	@Override
@@ -31,5 +29,14 @@ public class ListaNaoVazia<T extends Valor> extends ValorLista<T> {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	@Override
+	public void aceitar(Visitor visitor) {
+		// TODO Auto-generated method stub
+		visitor.visitar(this);
+	}
+
+	
+
 
 }

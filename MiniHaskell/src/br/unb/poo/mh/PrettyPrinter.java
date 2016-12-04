@@ -202,4 +202,37 @@ public class PrettyPrinter implements Visitor{
 		
 	}
 
+	@Override
+	public void visitar(ListaVazia<?> exp) {
+		// TODO Auto-generated method stub
+		// lista vazia = []
+		System.out.println("[]");
+	}
+
+	@Override
+	
+	public void visitar(ListaNaoVazia<?> exp) {
+		// TODO Auto-generated method stub
+		// [1,2,3,4,5]
+		int i=0;
+		int tamanho = exp.tamanho();	
+		ValorLista<?> listaPrettyPrinter= exp;	
+		System.out.print("[");
+		
+		while(i<tamanho){
+			System.out.print(listaPrettyPrinter.getInicio());	
+			listaPrettyPrinter = listaPrettyPrinter.getResto();
+			
+			i++;
+			if(i!= tamanho){
+				System.out.print(",");		
+			}
+			
+		}
+		System.out.print("]");
+		
+		
+		
+	}
+
 }

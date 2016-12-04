@@ -25,4 +25,10 @@ public abstract class ValorParametrizado<T> extends Valor {
 		return true;
 	}
 	
+	@Override
+	public Valor avaliar() {
+		// TODO Auto-generated method stub
+		return this;
+	}		
+	
 }

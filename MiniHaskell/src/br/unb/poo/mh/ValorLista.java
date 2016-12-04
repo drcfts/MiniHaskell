@@ -1,78 +1,75 @@
 package br.unb.poo.mh;
 
-public abstract class ValorLista<T extends Valor> implements Expressao{
-		private Valor head;
-		private ValorLista <T>  tail;
+public abstract class ValorLista<T extends Expressao> implements Expressao{
+		private T inicio ;
+		private ValorLista <T>  resto;
 		private ValorLista <T>  anterior;
 		
-		public ValorLista(T head){
-			this.head = (Valor) head;
-			this.tail = null;
-			this.setAnterior(null);
-			
+		
+		
+		public ValorLista(T head) {
+			// TODO Auto-generated constructor stub
+		this.setInicio(head);
+		this.setResto(null);
+		this.setAnterior(null);
+		}
+		public int tamanho(){
+			int i=0;
+			ValorLista<?> aux = this;
+			while(!(aux instanceof ListaVazia<?>)){
+				i++;
+				aux.getResto();
+			}
+			return i;
+						
 		}
 		
 		
 		
-		
-		public ValorLista <T> getTail() {
-			return tail;
+		public T getInicio() {
+			return inicio;
 		}
-		public void setTail(ValorLista <T> tail) {
-			this.tail = tail;
+		public void setInicio(T inicio) {
+			this.inicio = inicio;
 		}
-		public Valor getHead() {
-			return head;
+		public ValorLista <T> getResto() {
+			return resto;
 		}
-		public void setHead(Valor head) {
-			this.head = head;
+		public void setResto(ValorLista <T> resto) {
+			this.resto = resto;
 		}
-	
-
 		public ValorLista <T> getAnterior() {
 			return anterior;
 		}
-
-
-
-
 		public void setAnterior(ValorLista <T> anterior) {
 			this.anterior = anterior;
 		}
 
-		public ValorLista<T> InserirLista(T valor){
-				ValorLista<T> novaLista = new ListaNaoVazia<T>(valor);
-			
-					if(this.getAnterior()!=null){
-						this.getAnterior().setTail(novaLista);
-					}
-					//-- a cauda da nova lista será a antiga lista
-					novaLista.setTail(this);
-					
-					novaLista.setAnterior(this.getAnterior());
-					//-- a anterior vai ser lista usado pra facilitar a manipulação
-					this.setAnterior(novaLista);
-					
-					return novaLista;
-					
+		public ValorLista<?> inserirInicio(T novoValor){
+		ValorLista<T> ListaRetornoAux = new ListaNaoVazia((Valor) novoValor);
+		if(this.getAnterior() != null){
+			this.getAnterior().setResto(ListaRetornoAux);
 			
 		}
-
-		public ValorInteiro tamanho (){
-			int i=0;
-			ValorLista<?> Listaaux = this;
-				while(!(Listaaux instanceof ListaVazia<?>)){
-					i++;
-					Listaaux = ((ListaNaoVazia<?>)Listaaux).getTail();
+		ListaRetornoAux.setResto(this);
+		ListaRetornoAux.setAnterior(this.getAnterior());
+		this.setAnterior(ListaRetornoAux);
+		return ListaRetornoAux;
+		
+		
+	}	
+		public ValorLista<T> remover(){
+			if(this.tipo() == Tipo.ListaNaoVazia){
+				if(this.getAnterior()!= null){
+					this.getAnterior().setResto(this.getResto());
 				}
-			
-			return new ValorInteiro(i);
-			
-			
+			this.getResto().setAnterior(this.getAnterior());		
+				return this.getResto();	
 		}
-
-
-
-
-
+			
+			return this;
+		}
+		
+		
+		
 }

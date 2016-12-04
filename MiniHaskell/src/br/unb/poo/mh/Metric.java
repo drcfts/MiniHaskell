@@ -185,4 +185,27 @@ public class Metric implements Visitor {
 		NumArgumentos = numArgumentos;
 	}
 
+	@Override
+	public void visitar(ListaVazia<?> exp) {
+		// TODO Auto-generated method stub
+		NumArgumentos++;
+	}
+
+	@Override
+	public void visitar(ListaNaoVazia<?> exp) {
+		// TODO Auto-generated method stub
+		NumArgumentos++;
+		exp.getInicio().aceitar(this);
+	int tamanho = exp.tamanho();	
+	ValorLista<?> listaAceitar = exp;	
+	int i=0;
+	while(i<tamanho){
+		listaAceitar.getResto().aceitar(this);
+		listaAceitar = listaAceitar.getResto();
+		i++;
+	}
+	
+	
+	}
+
 }
