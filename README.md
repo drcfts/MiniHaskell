@@ -61,7 +61,7 @@ Esse comando carrega em memoria todas as declarações de funcoes descritas no a
 
 b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista. 
 
-c) Implementar novas transformaciones de programas usando visitors. 
+c) Implementar novas transformaciones de programas usando visitors. (OK, visitor,PrettyPrinter,Refactoring,Metrica implementados ... faltando apenas para as coisas Listas)
 
 d) 90% de teste de cobertura
 
