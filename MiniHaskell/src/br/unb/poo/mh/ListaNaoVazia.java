@@ -1,5 +1,13 @@
 package br.unb.poo.mh;
 
+
+/**
+ * ListaNaoVazia eh o composite do esquema
+ * especificado
+ * @author drcfts
+ *
+ * @param <T>
+ */
 public class ListaNaoVazia<T extends Valor> extends ValorLista<T> {
 
 	public ListaNaoVazia(T inicio) {

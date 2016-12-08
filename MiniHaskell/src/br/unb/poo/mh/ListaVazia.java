@@ -1,5 +1,13 @@
 package br.unb.poo.mh;
 
+
+
+/**
+ * Elemento leaf do padrao Composite
+ * @author drcfts
+ *
+ * @param <T>
+ */
 public class ListaVazia<T extends Valor> extends ValorLista<T> {
 
 	public ListaVazia() {

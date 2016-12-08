@@ -1,5 +1,15 @@
 package br.unb.poo.mh;
 
+
+
+/**
+ * Usando o padrao de projeto Composite, pode ser 
+ * colocado, em uma mesma "lista", uma lista vazia 
+ * e uma nao vazia.
+ * @author drcfts
+ *
+ * @param <T> Valor conteudo da lista
+ */
 public abstract class ValorLista<T extends Valor> extends Valor{
 		private T inicio ;
 		private ValorLista <T>  cauda;
@@ -85,6 +95,18 @@ public abstract class ValorLista<T extends Valor> extends Valor{
 			return new ValorInteiro(tamanho);
 		}
 		
-		
+		public ValorLista<?> buscaPosicao(ValorInteiro posicao){
+			int pos = posicao.getValor();
+			ValorLista<?> atual = this;
+			
+			for(int i=0; i<pos; i++){
+				if(i>pos){
+					return null;
+				}
+				
+				atual = atual.getCauda();
+			}
+			return atual;
+		}
 		
 }

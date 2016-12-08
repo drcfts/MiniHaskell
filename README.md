@@ -1,4 +1,4 @@
-# MiniHaskell
+﻿# MiniHaskell
 ###Projeto 2
 ##Técnicas de Programação 1 ministrada pelo professor Rodrigo Bonifácio
 ###2/2016
@@ -41,7 +41,7 @@ Enviar arquivo ZIP contendo o codigo fonte + testes unitários + arquivo README 
 - [ ] Segunda parte 
 
 ## TODO
-a) Implementação do interpretador (3pts): 
+[ ]a) Implementação do interpretador (3pts): 
 
 * Programa que interpreta programas em MiniHaskell
 
@@ -59,11 +59,11 @@ Esse comando carrega em memoria todas as declarações de funcoes descritas no a
 
 5
 
-b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista. 
+[X] b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista. 
 
-c) Implementar novas transformaciones de programas usando visitors. (OK, visitor,PrettyPrinter,Refactoring,Metrica implementados ... faltando apenas para as coisas Listas)
+[X] c) Implementar novas transformaciones de programas usando visitors. (visitor,PrettyPrinter,Refactoring,Metrica implementados)
 
-d) 90% de teste de cobertura
+[ ] d) 90% de teste de cobertura
 
 Voce, tem o direito de me convencer qua a sua implementação merece um SS na disciplina. 
 t
