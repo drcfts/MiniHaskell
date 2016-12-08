@@ -41,7 +41,7 @@ Enviar arquivo ZIP contendo o codigo fonte + testes unitários + arquivo README 
 - [ ] Segunda parte 
 
 ## TODO
-[ ]a) Implementação do interpretador (3pts): 
+- [ ] a) Implementação do interpretador (3pts): 
 
 * Programa que interpreta programas em MiniHaskell
 
@@ -59,11 +59,11 @@ Esse comando carrega em memoria todas as declarações de funcoes descritas no a
 
 5
 
-[X] b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista.(ok) 
+- [x] b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista.(ok) 
 
-[X] c) Implementar novas transformaciones de programas usando visitors. (OK, visitor,PrettyPrinter,Refactoring,Metrica implementados)
+- [x] c) Implementar novas transformaciones de programas usando visitors. (OK, visitor,PrettyPrinter,Refactoring,Metrica implementados)
 
-[ ]d) 90% de teste de cobertura
+- [ ] d) 90% de teste de cobertura
 
   *  Pretty Printer - Visitor
   
