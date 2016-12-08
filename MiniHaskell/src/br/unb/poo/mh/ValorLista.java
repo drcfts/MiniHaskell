@@ -11,7 +11,7 @@ package br.unb.poo.mh;
  * @param <T> Valor conteudo da lista
  */
 public abstract class ValorLista<T extends Valor> extends Valor{
-		private T inicio ;
+		private T inicio;
 		private ValorLista <T>  cauda;
 		private ValorLista <T>  anterior;
 		
