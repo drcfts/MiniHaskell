@@ -48,7 +48,7 @@ public class Refactoring implements Visitor{
 			if(ExpDir == 0) {
 				setExp_Refactoring(exp.getExpEsquerda());
 			}
-			if(ExpEsq == 0) {
+			else if(ExpEsq == 0) {
 				setExp_Refactoring(exp.getExpDireita());
 			}
 			
@@ -73,13 +73,13 @@ public class Refactoring implements Visitor{
 			if(ExpDir == 1) {
 				setExp_Refactoring(exp.getExpEsquerda());
 			}
-			if(ExpEsq == 1) {
+			else if(ExpEsq == 1) {
 				setExp_Refactoring(exp.getExpDireita());
 			}
-			if(ExpDir == 0) {
+			else if(ExpDir == 0) {
 				setExp_Refactoring(new ValorInteiro(0));
 			}
-			if(ExpEsq == 0) {
+			else if(ExpEsq == 0) {
 				setExp_Refactoring(new ValorInteiro(0));
 			}
 						
@@ -251,7 +251,7 @@ public class Refactoring implements Visitor{
 		boolean C_else = ((ValorBooleano)exp.getClausulaThen()).getValor();
 		
 		/*
-		 * if (condição)	return true;
+		 * if (condiï¿½ï¿½o)	return true;
 		 
 		 * else				return false;
 		 * 

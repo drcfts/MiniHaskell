@@ -215,13 +215,13 @@ public class PrettyPrinter implements Visitor{
 		// TODO Auto-generated method stub
 		// [1,2,3,4,5]
 		int i=0;
-		int tamanho = exp.tamanho();	
+		int tamanho = ((ValorInteiro)exp.tamanho()).getValor();	
 		ValorLista<?> listaPrettyPrinter= exp;	
 		System.out.print("[");
 		
 		while(i<tamanho){
 			System.out.print(listaPrettyPrinter.getInicio());	
-			listaPrettyPrinter = listaPrettyPrinter.getResto();
+			listaPrettyPrinter = listaPrettyPrinter.getCauda();
 			
 			i++;
 			if(i!= tamanho){

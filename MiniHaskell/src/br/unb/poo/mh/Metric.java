@@ -196,12 +196,13 @@ public class Metric implements Visitor {
 		// TODO Auto-generated method stub
 		NumArgumentos++;
 		exp.getInicio().aceitar(this);
-	int tamanho = exp.tamanho();	
+	int tamanho = ((ValorInteiro)exp.tamanho()).getValor();	
 	ValorLista<?> listaAceitar = exp;	
 	int i=0;
+	
 	while(i<tamanho){
-		listaAceitar.getResto().aceitar(this);
-		listaAceitar = listaAceitar.getResto();
+		listaAceitar.getCauda().aceitar(this);
+		listaAceitar = listaAceitar.getCauda();
 		i++;
 	}
 	

@@ -6,16 +6,14 @@ public class ListaNaoVazia<T extends Valor> extends ValorLista<T> {
 		super(inicio);
 		ListaVazia<T> Resto = new ListaVazia<T>(); 
 		Resto.setAnterior(this);
-		this.setResto(Resto);
+		this.setCauda(Resto);
 		this.setAnterior(null);
 	}
 	
 
 	@Override
 	public Valor avaliar() {
-		ListaNaoVazia<T> vA = this;
-		Valor Resultado = vA.avaliar();
-		return Resultado;
+		return this;
 	}
 
 	@Override
