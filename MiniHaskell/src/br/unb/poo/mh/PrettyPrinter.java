@@ -258,7 +258,6 @@ public class PrettyPrinter implements Visitor{
 		}
 		PP=PP+"]";
 		System.out.print(PP);
-		
 	}
 
 }

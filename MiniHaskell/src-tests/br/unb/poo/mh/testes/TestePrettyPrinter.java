@@ -1,13 +1,25 @@
 package br.unb.poo.mh.testes;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.unb.poo.mh.Ambiente;
 import br.unb.poo.mh.Expressao;
+import br.unb.poo.mh.Identificador;
+import br.unb.poo.mh.ListaVazia;
 import br.unb.poo.mh.PrettyPrinter;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorBooleano;
+import br.unb.poo.mh.ValorInteiro;
+import br.unb.poo.mh.ValorLista;
 import br.unb.poo.mh.expressoes.logicas.ExpressaoAnd;
 import br.unb.poo.mh.expressoes.logicas.ExpressaoNot;
 import br.unb.poo.mh.expressoes.logicas.ExpressaoOr;
 import br.unb.poo.mh.expressoes.matematicas.*;
 import br.unb.poo.mh.expressoes.relacionais.*;
+import br.unb.poo.mh.funcao.AplicacaoFuncao;
+import br.unb.poo.mh.funcao.ArgumentoFormal;
+import br.unb.poo.mh.funcao.DeclaracaoFuncao;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -83,8 +95,6 @@ public class TestePrettyPrinter {
 	
 	@Test
 	public void testePrettyPrinterAritmeticas(){
-		ValorBooleano v = new ValorBooleano(true);
-		ValorBooleano f = new ValorBooleano(false);
 		Expressao v10 = new ValorInteiro(10);
 		Expressao v5 = new ValorInteiro(5);
 		Expressao v2 = new ValorInteiro(2);
@@ -169,7 +179,55 @@ public class TestePrettyPrinter {
 	
 	@Test
 	public void testeAplicacaoFuncao(){
+		DeclaracaoFuncao soma;
+		List<ArgumentoFormal> args = new ArrayList<>();
+		args.add(new ArgumentoFormal(Tipo.Inteiro, "x"));
+		args.add(new ArgumentoFormal(Tipo.Inteiro, "y"));
+		Expressao corpo = new ExpressaoSoma(new Identificador("x"), 
+				new Identificador("y"));
 		
+		soma = new DeclaracaoFuncao("soma", args, corpo);
+		Ambiente.instance().declaraFuncao(soma);
+		
+		List<Expressao> parametros = new ArrayList<>();
+		parametros.add(new ValorInteiro(3));
+		parametros.add(new ValorInteiro(4));
+		
+		Expressao aplicaSoma = new AplicacaoFuncao("soma", parametros);
+		
+		PrettyPrinter PP = new PrettyPrinter();
+		
+		aplicaSoma.aceitar(PP);
+		Assert.assertEquals("soma(3,4)", PP.getPP());	
+	}
+	
+	@Test
+	public void testeListas(){
+		ValorInteiro v1 = new ValorInteiro(1);
+		ValorInteiro v2 = new ValorInteiro(2);
+		ValorInteiro v3 = new ValorInteiro(3);
+		ValorLista<ValorInteiro> listavazia = new ListaVazia<ValorInteiro>();
+		ValorLista<ValorInteiro> lista = new ListaVazia<ValorInteiro>();
+		lista = lista.inserir(v1);
+		lista = lista.inserir(v2);
+		lista = lista.inserir(v3);
+		
+		PrettyPrinter PP = new PrettyPrinter();
+		
+		listavazia.aceitar(PP);
+		Assert.assertEquals("[]", PP.getPP());
+		PP.reset();
+		
+		lista.aceitar(PP);
+		Assert.assertEquals("[1,2,3]", PP.getPP());
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 }
