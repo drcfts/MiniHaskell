@@ -76,10 +76,12 @@ public abstract class ValorLista<T extends Valor> extends Valor{
 				if(this.getAnterior()!= null){
 					this.getAnterior().setCauda(this.getCauda());
 				}
-			this.getCauda().setAnterior(this.getAnterior());		
-				return this.getCauda();	
-		}
-			
+				this.getCauda().setAnterior(this.getAnterior());		
+					return this.getCauda();	
+			} //end if
+			else if(this.tipo() == Tipo.ListaVazia){
+				return null;
+			}
 			return this;
 		}
 		
@@ -99,12 +101,15 @@ public abstract class ValorLista<T extends Valor> extends Valor{
 			int pos = posicao.getValor();
 			ValorLista<?> atual = this;
 			
-			for(int i=0; i<pos; i++){
+			for(int i=0; i<pos && atual.tipo()!=Tipo.ListaVazia; i++){
 				if(i>pos){
 					return null;
 				}
 				
 				atual = atual.getCauda();
+			}
+			if(atual.tipo() == Tipo.ListaVazia){
+				return null;
 			}
 			return atual;
 		}

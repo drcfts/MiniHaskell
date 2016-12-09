@@ -21,11 +21,20 @@ public class TesteLista {
 	private ValorInteiro Indice_1;
 	private ValorInteiro Indice_0;
 
-	
+	   
 	
 	// testando a lista em si
 	@Test
 	public void testeListaInteira(){
+		v2 = new ValorInteiro(2);
+        v9 = new ValorInteiro(9);
+		v7 = new ValorInteiro(7);
+	    Indice_0 = new ValorInteiro(0);
+        Indice_1 = new ValorInteiro(1);
+		   
+		 bool_true = new ValorBooleano(true);
+		 bool_false = new ValorBooleano(false);
+		
 		ValorLista<ValorInteiro> listaTestadaInteiro = new ListaVazia<ValorInteiro>();
 		ValorLista<ValorBooleano> listaTestadaBool = new ListaVazia<ValorBooleano>();
 		
@@ -33,24 +42,15 @@ public class TesteLista {
 			Assert.assertNull(listaTestadaInteiro.getAnterior());
 			Assert.assertNull(listaTestadaInteiro.getCauda());
 			Assert.assertNull(listaTestadaInteiro.getInicio());
-			Assert.assertNull(listaTestadaInteiro.getAnterior().getInicio().getValor());
-			Assert.assertNull(listaTestadaInteiro.getCauda().getInicio().getValor());
-			Assert.assertNull(listaTestadaInteiro.getInicio().getValor());
 			Assert.assertNull(listaTestadaInteiro.buscaPosicao(Indice_0));
 			Assert.assertNull(listaTestadaInteiro.buscaPosicao(Indice_1));	
 			Assert.assertNull(listaTestadaInteiro.remover());
-			Assert.assertNull(listaTestadaInteiro.getCauda().remover());			
 			Assert.assertEquals(new ValorInteiro(0).getValor(), listaTestadaBool.tamanho().getValor());
+			Assert.assertEquals(true, listaTestadaInteiro.checarTipo());
+			Assert.assertNull(listaTestadaInteiro.avaliar());
 				
 			 
-	   v2 = new ValorInteiro(2);
-	   v9 = new ValorInteiro(9);
-	   v7 = new ValorInteiro(7);
-	   Indice_0 = new ValorInteiro(0);
-	   Indice_1 = new ValorInteiro(1);
-	   
-	 bool_true = new ValorBooleano(true);
-	 bool_false = new ValorBooleano(false);
+
 	/////////////////////////// Primeira Inser��o 
 	/*
 	 * Inteiros
@@ -119,12 +119,12 @@ public class TesteLista {
 	 */
 		 Assert.assertEquals(new Integer(9),((ValorInteiro)listaTestadaInteiro.buscaPosicao(Indice_0).getInicio()).getValor());
 		 Assert.assertEquals(new Integer(7),((ValorInteiro)listaTestadaInteiro.buscaPosicao(Indice_1).getInicio()).getValor());
-		 Assert.assertEquals(null,listaTestadaInteiro.buscaPosicao(new ValorInteiro(3)).getInicio());
+		 Assert.assertEquals(null,listaTestadaInteiro.buscaPosicao(new ValorInteiro(3)));
 		 
 		 
 		 Assert.assertEquals(false,((ValorBooleano)listaTestadaBool.buscaPosicao(Indice_0).getInicio()).getValor());
 		 Assert.assertEquals(true,((ValorBooleano)listaTestadaBool.buscaPosicao(Indice_1).getInicio()).getValor());
-		 Assert.assertEquals(null,listaTestadaBool.buscaPosicao(v2).getInicio());
+		 Assert.assertEquals(null,listaTestadaBool.buscaPosicao(v2));
 		 
 		 
 		 

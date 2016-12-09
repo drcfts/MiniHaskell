@@ -19,7 +19,7 @@ public class ListaVazia<T extends Valor> extends ValorLista<T> {
 	public Valor avaliar() {
 		// TODO Auto-generated method stub
 			ListaVazia<T> vA = this;
-			Valor Resultado = vA.getInicio().avaliar();
+			Valor Resultado = vA.getInicio();
 			return Resultado;
 	}
 

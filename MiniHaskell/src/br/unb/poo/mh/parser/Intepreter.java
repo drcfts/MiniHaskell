@@ -28,9 +28,9 @@ public class Intepreter {
 	//sera chamado pelo metodo de traducao
 	private Token operador(String exp){
 		switch(exp){
-			case "&&": return Token.AND;
-			case "!": return Token.NOT;
-			case "||": return Token.OR;
+			case "and": return Token.AND;
+			case "not": return Token.NOT;
+			case "or": return Token.OR;
 			case "+": return Token.SOMA;
 			case "-": return Token.SUBTRACAO;
 			case "/": return Token.DIVISAO;
@@ -113,14 +113,17 @@ public class Intepreter {
 				else if(segundaExpressao){
 					Expressao e1 = stack.pop();
 					Expressao e2;
+					Expressao resultado;
 						//not n tem segunda expressao pra fazer pop
 						if(tokenArmazenado != Token.NOT){
 							e2 = stack.pop();
+							resultado = avalia(e2, e1, tokenArmazenado);
 						} else{
 							e2 = null;
+							resultado = avalia(e1, e2, tokenArmazenado);
 						}
 						
-						Expressao resultado = avalia(e2, e1, tokenArmazenado);
+						
 						stack.push(resultado);
 						segundaExpressao = false;
 				} //end else
