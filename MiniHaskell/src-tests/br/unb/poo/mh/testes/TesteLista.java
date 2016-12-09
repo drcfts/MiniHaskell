@@ -33,8 +33,16 @@ public class TesteLista {
 			Assert.assertNull(listaTestadaInteiro.getAnterior());
 			Assert.assertNull(listaTestadaInteiro.getCauda());
 			Assert.assertNull(listaTestadaInteiro.getInicio());
-			 Assert.assertEquals(new ValorInteiro(0).getValor(), listaTestadaBool.tamanho().getValor());
+			Assert.assertNull(listaTestadaInteiro.getAnterior().getInicio().getValor());
+			Assert.assertNull(listaTestadaInteiro.getCauda().getInicio().getValor());
+			Assert.assertNull(listaTestadaInteiro.getInicio().getValor());
+			Assert.assertNull(listaTestadaInteiro.buscaPosicao(Indice_0));
+			Assert.assertNull(listaTestadaInteiro.buscaPosicao(Indice_1));	
+			Assert.assertNull(listaTestadaInteiro.remover());
+			Assert.assertNull(listaTestadaInteiro.getCauda().remover());			
+			Assert.assertEquals(new ValorInteiro(0).getValor(), listaTestadaBool.tamanho().getValor());
 				
+			 
 	   v2 = new ValorInteiro(2);
 	   v9 = new ValorInteiro(9);
 	   v7 = new ValorInteiro(7);
