@@ -19,6 +19,10 @@ public class Metric implements Visitor {
 
 	private int NumArgumentos = 0;
 	
+	public void reset(){
+		NumArgumentos = 0;
+	}
+	
 	@Override
 	public void visitar(ValorInteiro exp) {
 		// TODO Auto-generated method stub
