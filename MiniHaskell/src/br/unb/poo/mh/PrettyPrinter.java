@@ -219,12 +219,12 @@ public class PrettyPrinter implements Visitor{
 		// let x=20 in x+30
 		// TODO Auto-generated method stub
 		// parte let x = 20
-		PP=PP+"let";
+		PP=PP+"let ";
 		PP=PP+exp.getId();
 		PP=PP+" = ";
-		exp.getExpressao().aceitar(this);
-		PP=PP+" in ";
 		exp.getAtrib().aceitar(this);
+		PP=PP+" in ";
+		exp.getExpressao().aceitar(this);
 		System.out.print(PP);
 	}
 

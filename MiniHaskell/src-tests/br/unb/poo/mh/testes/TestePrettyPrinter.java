@@ -3,6 +3,16 @@ package br.unb.poo.mh.testes;
 import br.unb.poo.mh.Expressao;
 import br.unb.poo.mh.PrettyPrinter;
 import br.unb.poo.mh.ValorBooleano;
+import br.unb.poo.mh.expressoes.logicas.ExpressaoAnd;
+import br.unb.poo.mh.expressoes.logicas.ExpressaoNot;
+import br.unb.poo.mh.expressoes.logicas.ExpressaoOr;
+import br.unb.poo.mh.expressoes.matematicas.*;
+import br.unb.poo.mh.expressoes.relacionais.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import br.unb.poo.mh.*;
 
 public class TestePrettyPrinter {
 	
@@ -146,6 +156,8 @@ public class TestePrettyPrinter {
 		Expressao v30 = new ValorInteiro(30);
 		Expressao soma = new ExpressaoSoma(id,v30);
 		Expressao let = new ExpressaoLet("x",v20,soma);
+		
+		PrettyPrinter PP = new PrettyPrinter();
 		
 		id.aceitar(PP);
 		Assert.assertEquals("x", PP.getPP());

@@ -87,9 +87,9 @@ public abstract class ValorLista<T extends Valor> extends Valor{
 			int tamanho = 0;
 			ValorLista<?> auxiliar = this;
 			
-			if(!(auxiliar instanceof ListaNaoVazia<?>)){
+			while(!(auxiliar.tipo().equals(Tipo.ListaVazia))){
 				tamanho++;
-				auxiliar = auxiliar.getCauda();
+				auxiliar = ((ListaNaoVazia<?>)auxiliar).getCauda();
 			}
 			
 			return new ValorInteiro(tamanho);

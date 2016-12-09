@@ -13,9 +13,9 @@ import br.unb.poo.mh.ValorParametrizado;
 
 
 public class TesteLista {
-	private ValorInteiro Int_1;
-	private ValorInteiro Int_2;
-	private ValorInteiro Int_3;
+	private ValorInteiro v2;
+	private ValorInteiro v9;
+	private ValorInteiro v7;
 	private ValorBooleano bool_true;
 	private ValorBooleano bool_false;
 	private ValorInteiro Indice_1;
@@ -33,33 +33,34 @@ public class TesteLista {
 			Assert.assertNull(listaTestadaInteiro.getAnterior());
 			Assert.assertNull(listaTestadaInteiro.getCauda());
 			Assert.assertNull(listaTestadaInteiro.getInicio());
-			 Assert.assertEquals(new Integer(0), listaTestadaBool.tamanho().getValor());
+			 Assert.assertEquals(new ValorInteiro(0).getValor(), listaTestadaBool.tamanho().getValor());
 				
-	   Int_1 = new ValorInteiro(2);
-	   Int_2 = new ValorInteiro(9);
-	   Int_3 = new ValorInteiro(7);
+	   v2 = new ValorInteiro(2);
+	   v9 = new ValorInteiro(9);
+	   v7 = new ValorInteiro(7);
 	   Indice_0 = new ValorInteiro(0);
 	   Indice_1 = new ValorInteiro(1);
 	   
 	 bool_true = new ValorBooleano(true);
 	 bool_false = new ValorBooleano(false);
-	/////////////////////////// Primeira Inserção 
+	/////////////////////////// Primeira Inserï¿½ï¿½o 
 	/*
 	 * Inteiros
 	 * Lista com apenas um elemento
-	 * inicio - terá o valor 
-	 * o resto será null
+	 * inicio - terï¿½ o valor 
+	 * o resto serï¿½ null
 	 * neste caso testar inserir tbm
 	 */
-	listaTestadaInteiro = listaTestadaInteiro.inserir(Int_1);
+	 Assert.assertEquals(new Integer(0), listaTestadaInteiro.tamanho().getValor());
+	listaTestadaInteiro = listaTestadaInteiro.inserir(v2);
 	 Assert.assertEquals(new Integer(2), listaTestadaInteiro.getInicio().getValor());
 	 Assert.assertNull(listaTestadaInteiro.getCauda().getInicio());
 	 Assert.assertEquals(new Integer(1), listaTestadaInteiro.tamanho().getValor());
 	 /*
 		 * Bool
 		 * Lista com apenas um elemento
-		 * inicio - terá o valor 
-		 * o resto será null
+		 * inicio - terï¿½ o valor 
+		 * o resto serï¿½ null
 		 * neste caso testar inserir tbm
 		 */
 		
@@ -68,25 +69,30 @@ public class TesteLista {
 	 Assert.assertEquals(true, listaTestadaBool.getInicio().getValor());
 	 Assert.assertNull(listaTestadaBool.getCauda().getInicio());
 	 Assert.assertEquals(new Integer(1), listaTestadaBool.tamanho().getValor());
-	////////////////////////////////////////////// Segunda Inserção
+	////////////////////////////////////////////// Segunda Inserï¿½ï¿½o
 	 /*
 		 * Inteiros
 		 * Lista com apenas um elemento
-		 * inicio - terá o valor 
-		 * cauda -> terá o valor anterior
-		 * o resto será null
+		 * inicio - terï¿½ o valor 
+		 * cauda -> terï¿½ o valor anterior
+		 * o resto serï¿½ null
 		 */
-		listaTestadaInteiro = listaTestadaInteiro.inserir(Int_2);
-		 Assert.assertEquals(new Integer(9), listaTestadaInteiro.getInicio().getValor());
+	 	Assert.assertEquals(new Integer(1), listaTestadaInteiro.tamanho().getValor());
+		listaTestadaInteiro = listaTestadaInteiro.inserir(v7);
+		 Assert.assertEquals(new Integer(7), listaTestadaInteiro.getInicio().getValor());
 		 Assert.assertEquals(new Integer(2), listaTestadaInteiro.getCauda().getInicio().getValor());
 		 Assert.assertNull(listaTestadaInteiro.getCauda().getCauda().getInicio());
 		 Assert.assertEquals(new Integer(2), listaTestadaInteiro.tamanho().getValor());
+		 
+		 listaTestadaInteiro = listaTestadaInteiro.inserir(v9);
+		 Assert.assertEquals(v2.getValor(), ((ValorInteiro)listaTestadaInteiro.buscaPosicao(new ValorInteiro(2)).getInicio()).getValor());
+		 Assert.assertEquals(new Integer(3), listaTestadaInteiro.tamanho().getValor());
 		 /*
 			 * Bool
 			 * Lista com apenas um elemento
-			 * inicio - terá o valor 
-			 *  cauda -> terá o valor anterior
-			 * o resto será null
+			 * inicio - terï¿½ o valor 
+			 *  cauda -> terï¿½ o valor anterior
+			 * o resto serï¿½ null
 			 * neste caso testar inserir tbm
 			 */
 			
@@ -97,20 +103,20 @@ public class TesteLista {
 		 Assert.assertNull(listaTestadaBool.getCauda().getCauda().getInicio());
 		 Assert.assertEquals(new Integer(2), listaTestadaBool.tamanho().getValor());
 		
-		 // tamanho já foi testado , inserir tb
+		 // tamanho jï¿½ foi testado , inserir tb
 	 
 	/*
-	 * testando busca por posição 
+	 * testando busca por posiï¿½ï¿½o 
 	 * 
 	 */
-		 Assert.assertEquals(new Integer(2),listaTestadaInteiro.buscaPosicao(Indice_0).getInicio().avaliar());
-		 Assert.assertEquals(new Integer(9),listaTestadaInteiro.buscaPosicao(Indice_1).getInicio().avaliar());
-		 Assert.assertEquals(null,listaTestadaInteiro.buscaPosicao(Int_1));
+		 Assert.assertEquals(new Integer(9),((ValorInteiro)listaTestadaInteiro.buscaPosicao(Indice_0).getInicio()).getValor());
+		 Assert.assertEquals(new Integer(7),((ValorInteiro)listaTestadaInteiro.buscaPosicao(Indice_1).getInicio()).getValor());
+		 Assert.assertEquals(null,listaTestadaInteiro.buscaPosicao(new ValorInteiro(3)).getInicio());
 		 
 		 
-		 Assert.assertEquals(false,listaTestadaBool.buscaPosicao(Indice_0).getInicio().avaliar());
-		 Assert.assertEquals(true,listaTestadaBool.buscaPosicao(Indice_1).getInicio().avaliar());
-		 Assert.assertEquals(null,listaTestadaBool.buscaPosicao(Int_1));
+		 Assert.assertEquals(false,((ValorBooleano)listaTestadaBool.buscaPosicao(Indice_0).getInicio()).getValor());
+		 Assert.assertEquals(true,((ValorBooleano)listaTestadaBool.buscaPosicao(Indice_1).getInicio()).getValor());
+		 Assert.assertEquals(null,listaTestadaBool.buscaPosicao(v2).getInicio());
 		 
 		 
 		 
@@ -119,8 +125,9 @@ public class TesteLista {
 		  * lista inteira 
 		  */
 	 
-	 listaTestadaInteiro.getCauda().remover();
-	 Assert.assertEquals(new Integer(9), listaTestadaInteiro.getInicio().getValor());
+	 listaTestadaInteiro.buscaPosicao(v2).remover();
+	 Assert.assertEquals(new Integer(7), listaTestadaInteiro.getCauda().getInicio().getValor());
+	 listaTestadaInteiro.buscaPosicao(Indice_1).remover();
 	 Assert.assertNull(listaTestadaInteiro.getCauda().getInicio());
 	 Assert.assertEquals(new Integer(1), listaTestadaInteiro.tamanho().getValor());
 
@@ -129,7 +136,7 @@ public class TesteLista {
 	  * lista booleano 
 	  */
 	 listaTestadaBool.getCauda().remover();
-	 Assert.assertEquals(true, listaTestadaBool.getInicio().getValor());
+	 Assert.assertEquals(false, listaTestadaBool.getInicio().getValor());
 	 Assert.assertNull(listaTestadaBool.getCauda().getInicio());
 	 Assert.assertEquals(new Integer(1), listaTestadaBool.tamanho().getValor());
 	 
