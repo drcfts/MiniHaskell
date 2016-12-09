@@ -29,173 +29,189 @@ public class PrettyPrinter implements Visitor{
 	
 	@Override
 	public void visitar(ValorInteiro exp) {
-		PP = PP + exp.getValor();
+		PP=PP+exp.getValor();
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ValorBooleano exp) {
-		PP = PP + exp.getValor();
+		PP=PP+exp.getValor();
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoSoma exp) {
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +"+";
+		PP=PP+"+";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoMultiplicacao exp) {
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +"*";
+		PP=PP+"*";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(IfThenElse exp) {
-		PP = PP +"if( ";
+		PP=PP+"if(";
 		exp.getCondicao().aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
 		
-		PP = PP +"then ";
+		PP=PP+" then ";
 		exp.getClausulaThen().aceitar(this);
-		
-		PP = PP +"else ";
+
+		PP=PP+" else ";
 		exp.getClausulaElse().aceitar(this);
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(AplicacaoFuncao exp) {
-		System.out.print(exp.getNome());
-		PP = PP +"(";
+		PP=PP+exp.getNome();
+		PP=PP +"(";
 		int i = 0;
 		while(i < exp.getParametros().size() - 1) {
 			exp.getParametros().get(i++).aceitar(this);
-			PP = PP +",";
+			PP=PP+",";
 		}
 		if(i == exp.getParametros().size() - 1) {
 			exp.getParametros().get(i++).aceitar(this);
 		}
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(Identificador exp) {
-		PP = PP + exp.getId();
+		PP=PP+exp.getId();
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoDivisao exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" / ";
+		PP=PP+"/";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoSubtracao exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" - ";
+		PP=PP+"-";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
-		
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoDiferente exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" /= ";
+		PP=PP+"/=";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP +")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoIgual exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" == ";
+		PP=PP+"==";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoMaior exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" > ";
+		PP=PP+">";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
-		
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoMenor exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" < ";
+		PP=PP+"<";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoMenorIgual exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" <= ";
+		PP=PP+"<=";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoMaiorIgual exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" >= ";
+		PP=PP+">=";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoAnd exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" && ";
+		PP=PP+"&&";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoOr exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"(";
+		PP=PP+"(";
 		exp.expEsquerda.aceitar(this);
-		PP = PP +" || ";
+		PP=PP+"||";
 		exp.expDireita.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ExpressaoNot exp) {
 		// TODO Auto-generated method stub
-		PP = PP +"!(";
+		PP=PP+"!(";
 		exp.uni.aceitar(this);
-		PP = PP +")";
+		PP=PP+")";
+		System.out.print(PP);
 	}
 
 	@Override
@@ -203,20 +219,21 @@ public class PrettyPrinter implements Visitor{
 		// let x=20 in x+30
 		// TODO Auto-generated method stub
 		// parte let x = 20
-		PP = PP +"let ";
-		PP = PP +exp.getId();
-		PP = PP +" = ";
+		PP=PP+"let";
+		PP=PP+exp.getId();
+		PP=PP+" = ";
 		exp.getExpressao().aceitar(this);
-		PP = PP +" in ";
+		PP=PP+" in ";
 		exp.getAtrib().aceitar(this);
-		
+		System.out.print(PP);
 	}
 
 	@Override
 	public void visitar(ListaVazia<?> exp) {
 		// TODO Auto-generated method stub
 		// lista vazia = []
-		PP = PP +"[]";
+		PP=PP+"[]";
+		System.out.print(PP);
 	}
 
 	@Override
@@ -227,23 +244,21 @@ public class PrettyPrinter implements Visitor{
 		int i=0;
 		int tamanho = ((ValorInteiro)exp.tamanho()).getValor();	
 		ValorLista<?> listaPrettyPrinter= exp;	
-		PP = PP +"[";
+		PP=PP+"[";
 		
 		while(i<tamanho){
-			PP = PP +listaPrettyPrinter.getInicio();	
+			PP=PP+listaPrettyPrinter.getInicio();	
 			listaPrettyPrinter = listaPrettyPrinter.getCauda();
 			
 			i++;
 			if(i!= tamanho){
-				PP = PP +",";		
+				PP=PP+",";		
 			}
 			
 		}
-		PP = PP +"]";
-		
-		
+		PP=PP+"]";
+		System.out.print(PP);
 		
 	}
 
 }
-
