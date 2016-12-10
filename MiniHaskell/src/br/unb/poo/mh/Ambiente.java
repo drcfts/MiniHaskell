@@ -123,7 +123,7 @@ public class Ambiente {
 	 * particularmente util quando uma funcao eh chamada.
 	 */
 	public void empilha() {
-		pilhaExecucao.push(new HashMap<>());
+		pilhaExecucao.push(new HashMap<String, Expressao>());
 	}
 	
 	/**

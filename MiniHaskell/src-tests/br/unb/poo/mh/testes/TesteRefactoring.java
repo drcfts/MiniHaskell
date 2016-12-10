@@ -125,16 +125,16 @@ public class TesteRefactoring {
 		Refactoring R4 = new Refactoring();
 		
 		and1.aceitar(R1);
-		Assert.assertEquals(v, R1.getExp_Refactoring());
+		Assert.assertEquals(v, R1.getExp_Refactoring().avaliar());
 		
 		and2.aceitar(R2);
-		Assert.assertEquals(f, R2.getExp_Refactoring());
+		Assert.assertEquals(f, R2.getExp_Refactoring().avaliar());
 		
 		and3.aceitar(R3);
-		Assert.assertEquals(f, R3.getExp_Refactoring());
+		Assert.assertEquals(f, R3.getExp_Refactoring().avaliar());
 		
 		and4.aceitar(R4);
-		Assert.assertEquals(f, R4.getExp_Refactoring());
+		Assert.assertEquals(f, R4.getExp_Refactoring().avaliar());
 	}
 	
 	@Test
@@ -156,16 +156,16 @@ public class TesteRefactoring {
 		Refactoring R4 = new Refactoring();
 		
 		or1.aceitar(R1);
-		Assert.assertEquals(v, R1.getExp_Refactoring());
+		Assert.assertEquals(v, R1.getExp_Refactoring().avaliar());
 		
 		or2.aceitar(R2);
-		Assert.assertEquals(v, R2.getExp_Refactoring());
+		Assert.assertEquals(v, R2.getExp_Refactoring().avaliar());
 		
 		or3.aceitar(R3);
-		Assert.assertEquals(v, R1.getExp_Refactoring());
+		Assert.assertEquals(v, R1.getExp_Refactoring().avaliar());
 		
 		or4.aceitar(R4);
-		Assert.assertEquals(f, R1.getExp_Refactoring());
+		Assert.assertEquals(v, R1.getExp_Refactoring().avaliar());
 	}
 	
 	@Test 
@@ -189,10 +189,10 @@ public class TesteRefactoring {
 		Expressao ifthenelse2 = new IfThenElse(maior2,v,f);
 				
 		ifthenelse.aceitar(R1);
-		Assert.assertEquals(true, R1.getExp_Refactoring());
+		Assert.assertEquals(v, R1.getExp_Refactoring().avaliar());
 		
 		ifthenelse2.aceitar(R2);
-		Assert.assertEquals(false, R2.getExp_Refactoring());
+		Assert.assertEquals(f, R2.getExp_Refactoring().avaliar());
 		
 		
 	}
