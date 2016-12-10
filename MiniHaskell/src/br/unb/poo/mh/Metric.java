@@ -179,6 +179,8 @@ public class Metric implements Visitor {
 	public void visitar(ExpressaoLet exp) {
 		// TODO Auto-generated method stub
 		NumArgumentos ++;
+		exp.getAtrib().aceitar(this);
+		exp.getExpressao().aceitar(this);
 	}
 
 	public int getNumArgumentos() {
@@ -197,19 +199,20 @@ public class Metric implements Visitor {
 
 	@Override
 	public void visitar(ListaNaoVazia<?> exp) {
-		// TODO Auto-generated method stub
-		NumArgumentos++;
-		exp.getInicio().aceitar(this);
-	int tamanho = ((ValorInteiro)exp.tamanho()).getValor();	
-	ValorLista<?> listaAceitar = exp;	
-	int i=0;
+			// TODO Auto-generated method stub
+			NumArgumentos++;
+			exp.getInicio().aceitar(this);
+		int tamanho = ((ValorInteiro)exp.tamanho()).getValor();	
+		ValorLista<?> listaAceitar = exp;	
+		int i=0;
 	
-	while(i<tamanho){
-		listaAceitar.getCauda().aceitar(this);
-		listaAceitar = listaAceitar.getCauda();
-		i++;
-	}
-	
+			while(i<tamanho){
+				if(listaAceitar.getCauda().tipo() != Tipo.ListaVazia){
+					listaAceitar.getCauda().getInicio().aceitar(this);
+				}
+				listaAceitar = listaAceitar.getCauda();
+				i++;
+			}
 	
 	}
 

@@ -1,6 +1,12 @@
 package br.unb.poo.mh.parser;
 
 import br.unb.poo.mh.expressoes.matematicas.*;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoDiferente;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoIgual;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoMaior;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoMaiorIgual;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoMenor;
+import br.unb.poo.mh.expressoes.relacionais.ExpressaoMenorIgual;
 import br.unb.poo.mh.expressoes.logicas.*;
 import br.unb.poo.mh.ValorBooleano;
 import br.unb.poo.mh.ValorInteiro;
@@ -37,6 +43,12 @@ public class Intepreter {
 			case "*": return Token.MULTIPLICACAO;
 			case "let": return Token.LET;
 			case "if": return Token.IFTELSE;
+			case ">": return Token.MAIOR;
+			case ">=": return Token.MAIOREQ;
+			case "<": return Token.MENOR;
+			case "<=": return Token.MENOREQ;
+			case "==": return Token.IGUAL;
+			case "!=": return Token.DIFERENTE;
 			default: 
 				//se n for nenhum dos acima, sera testado se
 				//eh int ou boolean; caso n seja nenhum dos 2,
@@ -68,6 +80,12 @@ public class Intepreter {
 			case NOT: return new ExpressaoNot(e1);
 			case AND: return new ExpressaoAnd(e1, e2);
 			case OR: return new ExpressaoOr(e1, e2);
+			case MAIOR: return new ExpressaoMaior(e1, e2);
+			case MENOR: return new ExpressaoMenor(e1, e1);
+			case MAIOREQ: return new ExpressaoMaiorIgual(e1, e2);
+			case MENOREQ: return new ExpressaoMenorIgual(e1, e2);
+			case IGUAL: return new ExpressaoIgual(e1, e2);
+			case DIFERENTE: return new ExpressaoDiferente(e1, e2);
 			//caso nao seja nenhum dos operadores acima,
 			//retorna erro
 			default: throw new RuntimeException();
@@ -81,6 +99,11 @@ public class Intepreter {
 	private boolean ehMatematica(Token t){
 		return (t == Token.SOMA || t == Token.MULTIPLICACAO || 
 				t == Token.DIVISAO || t == Token.SUBTRACAO);
+	}
+	
+	private boolean ehRelacional(Token t){
+		return (t == Token.DIFERENTE || t == Token.IGUAL || t == Token.MAIOR 
+				|| t == Token.MAIOREQ || t == Token.MENOR || t == Token.MENOREQ);
 	}
 	
 	//retorna, em string, a avaliacao da string passada
@@ -104,7 +127,7 @@ public class Intepreter {
 				}
 				
 				//armazena operador na pilha
-				if(!segundaExpressao && (ehMatematica(t) || ehLogica(t))){
+				if(!segundaExpressao && (ehMatematica(t) || ehLogica(t) || ehRelacional(t))){
 					tokenArmazenado = t;
 					//possui segunda expressao a ser avaliada
 					segundaExpressao = true;

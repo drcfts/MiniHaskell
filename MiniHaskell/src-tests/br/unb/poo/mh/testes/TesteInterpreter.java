@@ -22,6 +22,12 @@ public class TesteInterpreter {
 		Assert.assertEquals("false", interpreter.traducao("true && false"));
 		Assert.assertEquals("false", interpreter.traducao("false || false"));
 		Assert.assertEquals("false", interpreter.traducao("not true"));
+		Assert.assertEquals("true", interpreter.traducao("2 > 1"));
+		Assert.assertEquals("true", interpreter.traducao("2 >= 1"));
+		Assert.assertEquals("true", interpreter.traducao("1 == 1"));
+		Assert.assertEquals("true", interpreter.traducao("2 != 1"));
+		Assert.assertEquals("false", interpreter.traducao("2 < 1"));
+		Assert.assertEquals("true", interpreter.traducao("1 <= 1"));
 
 	}
 	

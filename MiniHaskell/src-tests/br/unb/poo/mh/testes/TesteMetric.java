@@ -196,7 +196,7 @@ public class TesteMetric {
 		Metric M = new Metric();
 		
 		aplicaSoma.aceitar(M);
-		Assert.assertEquals(4, M.getNumArgumentos());
+		Assert.assertEquals(3, M.getNumArgumentos());
 	}
 	
 	@Test

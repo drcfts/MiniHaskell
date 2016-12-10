@@ -9,7 +9,8 @@ public class CommandLine {
 		Intepreter interpretador = new Intepreter();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Bem-vindo a Interpreter de MiniHaskell!");
-		System.out.println("Operacoes suportadas: Expressoes matematicas e logicas(simples e compostas)");
+		System.out.println("Operacoes suportadas: Expressoes matematicas, relacionais e logicas(simples e compostas)");
+		System.out.println("Para sair, pressione 'exit'");
 		
 		
 		System.out.print("> ");

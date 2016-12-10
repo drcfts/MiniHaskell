@@ -247,7 +247,12 @@ public class PrettyPrinter implements Visitor{
 		PP=PP+"[";
 		
 		while(i<tamanho){
-			PP=PP+listaPrettyPrinter.getInicio();	
+			if(listaPrettyPrinter.getInicio().tipo() == Tipo.Inteiro){
+				PP=PP+((ValorInteiro)listaPrettyPrinter.getInicio()).getValor();	
+			}
+			else if(listaPrettyPrinter.getInicio().tipo() == Tipo.Booleano){
+				PP=PP+((ValorBooleano)listaPrettyPrinter.getInicio()).getValor();	
+			}
 			listaPrettyPrinter = listaPrettyPrinter.getCauda();
 			
 			i++;

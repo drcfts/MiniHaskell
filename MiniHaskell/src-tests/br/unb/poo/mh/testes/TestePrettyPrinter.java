@@ -141,7 +141,7 @@ public class TestePrettyPrinter {
 		PP.reset();
 		
 		fim.aceitar(PP);
-		Assert.assertEquals("((((10>5)&&(5>=5))||(((5<2)&&(2<=5)))||((10==5)&&(2/=2)))", PP.getPP());
+		Assert.assertEquals("((((10>5)&&(5>=5))||((5<2)&&(2<=5)))||((10==5)&&(2/=2)))", PP.getPP());
 	}
 	
 	@Test
@@ -219,7 +219,7 @@ public class TestePrettyPrinter {
 		PP.reset();
 		
 		lista.aceitar(PP);
-		Assert.assertEquals("[1,2,3]", PP.getPP());
+		Assert.assertEquals("[3,2,1]", PP.getPP().toString());
 	}
 
 	
