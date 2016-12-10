@@ -81,7 +81,7 @@ public class Intepreter {
 			case AND: return new ExpressaoAnd(e1, e2);
 			case OR: return new ExpressaoOr(e1, e2);
 			case MAIOR: return new ExpressaoMaior(e1, e2);
-			case MENOR: return new ExpressaoMenor(e1, e1);
+			case MENOR: return new ExpressaoMenor(e1, e2);
 			case MAIOREQ: return new ExpressaoMaiorIgual(e1, e2);
 			case MENOREQ: return new ExpressaoMenorIgual(e1, e2);
 			case IGUAL: return new ExpressaoIgual(e1, e2);
