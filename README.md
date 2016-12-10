@@ -38,14 +38,17 @@ Verificar Indentificador e 	AplicacaoFuncao (ok)
 Enviar arquivo ZIP contendo o codigo fonte + testes unitários + arquivo README indicando a equipe. 
 #### FIM da primeira parte ______________________________________________________________________
 ### Segunda parte 
-- [ ] Segunda parte 
+- [x] Segunda parte 
 
 ## TODO
-<<<<<<< HEAD
-[ ]a) Implementação do interpretador (3pts): 
+
+
+[x]a) Implementação do interpretador (3pts): 
+###### NOTA : Interpreter funciona para expressões matemáticas, relacionais, booleanas. Expressões simples e composta também aceita
+
 =======
-- [ ] a) Implementação do interpretador (3pts): 
->>>>>>> 97d00eb99cf297494e3313e26674c59b443c5204
+- [x] a) Implementação do interpretador (3pts): 
+
 
 * Programa que interpreta programas em MiniHaskell
 
@@ -63,12 +66,13 @@ Esse comando carrega em memoria todas as declarações de funcoes descritas no a
 
 5
 
-<<<<<<< HEAD
+
 [X] b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista. 
 
 [X] c) Implementar novas transformaciones de programas usando visitors. (visitor,PrettyPrinter,Refactoring,Metrica implementados)
 
-[ ] d) 90% de teste de cobertura
+[x] d) 90% de teste de cobertura
+Cobertura total de 93%
 =======
 - [x] b) Implementar o suporte a listas na linguagem. Verificar o rascunho da solução no diagrama DesenhoLista.(ok) 
 
@@ -85,7 +89,5 @@ Esse comando carrega em memoria todas as declarações de funcoes descritas no a
   *  Lista
   
   *  Interpreter 
-  
->>>>>>> 97d00eb99cf297494e3313e26674c59b443c5204
 
 Voce, tem o direito de me convencer qua a sua implementação merece um SS na disciplina. 
